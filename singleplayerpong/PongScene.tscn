@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://nt0svsyicwni"]
+[gd_scene load_steps=8 format=3 uid="uid://nt0svsyicwni"]
 
 [ext_resource type="Script" path="res://PlayerMovement.cs" id="1_7gu0d"]
+[ext_resource type="Script" path="res://BallMovement.cs" id="2_g5c3e"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_itpix"]
-size = Vector2(24, 235)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uy47q"]
+size = Vector2(21, 235)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0tj0x"]
+size = Vector2(23, 34)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ce03l"]
 size = Vector2(1152, 10)
@@ -27,8 +31,22 @@ offset_right = 27.0
 offset_bottom = 531.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player Character"]
-position = Vector2(15, 413)
-shape = SubResource("RectangleShape2D_itpix")
+position = Vector2(15.5, 413.5)
+shape = SubResource("RectangleShape2D_uy47q")
+
+[node name="Ball" type="CharacterBody2D" parent="."]
+position = Vector2(734, 118)
+script = ExtResource("2_g5c3e")
+
+[node name="Square" type="ColorRect" parent="Ball"]
+offset_left = -6.0
+offset_top = -26.0
+offset_right = 17.0
+offset_bottom = 5.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+position = Vector2(5.5, -11)
+shape = SubResource("RectangleShape2D_0tj0x")
 
 [node name="Collision Walls" type="StaticBody2D" parent="."]
 
