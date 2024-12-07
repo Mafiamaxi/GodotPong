@@ -1,19 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://nt0svsyicwni"]
+[gd_scene load_steps=3 format=3 uid="uid://nt0svsyicwni"]
+
+[ext_resource type="Script" path="res://PlayerMovement.cs" id="1_7gu0d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_itpix"]
-size = Vector2(40, 297)
+size = Vector2(24, 235)
 
 [node name="Node2D" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(-5, -4)
+script = ExtResource("1_7gu0d")
 
 [node name="ColorRect" type="ColorRect" parent="CharacterBody2D"]
 offset_left = 2.0
-offset_top = 320.0
-offset_right = 42.0
+offset_top = 381.0
+offset_right = 25.0
 offset_bottom = 617.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(21, 467.5)
+position = Vector2(13, 498.5)
 shape = SubResource("RectangleShape2D_itpix")
