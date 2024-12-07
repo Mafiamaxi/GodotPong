@@ -24,6 +24,7 @@ script = ExtResource("1_pufih")
 
 [node name="Player Character" type="CharacterBody2D" parent="."]
 position = Vector2(6, -24)
+motion_mode = 1
 script = ExtResource("1_7gu0d")
 
 [node name="ColorRect" type="ColorRect" parent="Player Character"]
@@ -87,3 +88,5 @@ offset_right = 130.0
 offset_bottom = 43.0
 theme_override_font_sizes/font_size = 20
 text = "Score:"
+
+[connection signal="body_entered" from="Area2D" to="." method="OnAreaEntered"]
