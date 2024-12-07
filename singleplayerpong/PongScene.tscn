@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://nt0svsyicwni"]
+[gd_scene load_steps=9 format=3 uid="uid://nt0svsyicwni"]
 
 [ext_resource type="Script" path="res://PlayerMovement.cs" id="1_7gu0d"]
+[ext_resource type="Script" path="res://Main.cs" id="1_pufih"]
 [ext_resource type="Script" path="res://BallMovement.cs" id="2_g5c3e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uy47q"]
@@ -19,6 +20,7 @@ size = Vector2(13, 644)
 size = Vector2(14.5, 649)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_pufih")
 
 [node name="Player Character" type="CharacterBody2D" parent="."]
 position = Vector2(6, -24)
@@ -67,3 +69,21 @@ shape = SubResource("RectangleShape2D_jysu4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-9.75, 323)
 shape = SubResource("RectangleShape2D_nwpgr")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Text" type="Label" parent="CanvasLayer"]
+offset_left = 515.0
+offset_top = 27.0
+offset_right = 815.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 22
+text = "Modified Pong"
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 14.0
+offset_top = 20.0
+offset_right = 130.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 20
+text = "Score:"

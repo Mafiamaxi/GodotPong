@@ -7,9 +7,12 @@ public partial class BallMovement : CharacterBody2D
 	Vector2 velocity;
 	int direction;
 	float angle;
+	Main parentNode;
 
 	public override void _Ready()
 	{
+		//Get the parent (Node2D) node and access it's Main.cs script
+		parentNode = (Main)GetParent();
 		ResetBall();
 	}
 	
@@ -43,6 +46,7 @@ public partial class BallMovement : CharacterBody2D
 		// When the ball hits a wall, bounce back from it
 		if(col != null)
 		{
+			parentNode.IncreaseScore();
 			velocity = velocity.Bounce(col.GetNormal());
 		}
 		
